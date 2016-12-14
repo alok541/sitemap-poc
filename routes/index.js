@@ -23,7 +23,7 @@ router.get('/sitemap', function(req, res, next) {
     path.forEach(function(i) {
         urls.push({
             url : '/' + i,
-            lastmod : fs.statSync("../sitemap-poc/views/" + i).mtime,
+            lastmod : fs.statSync(proc.env.HOME + "/sitemap-poc/views/" + i).mtime,
             changefreq : 'daily',
             priority : 0.5
         });
